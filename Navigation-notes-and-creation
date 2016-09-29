@@ -1,6 +1,5 @@
 
 
-
 ##Piwik Walkthrough
 
 * connection to developer setup
@@ -70,4 +69,4 @@
 
 ###Chain of Dependencies
 
-When involving Piwik-Export, the repo has multiple dependecies on other repos. In order for Piwik-Export to run, Piwik itself must be installed and running on the machine. 
+When involving Piwik-Export, the repo has multiple dependecies on other repos. In order for Piwik-Export to run, Piwik itself must be installed and running on the machine, and for Piwik to run and gather data, the OZP-Ansible must also be configured. Reason being is that the Piwik-Export website (called Piwik-Charts on staging) is directly used to pull Piwik data over into a website that is easier to view and does not require as many permissions to access versus the actual Piwik website. 
