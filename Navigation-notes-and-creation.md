@@ -1,4 +1,4 @@
-### Links to include inside the book
+## Links to include inside the book
 
 * [OZP Ansible](https://github.com/aml-development/ozp-ansible)
 
@@ -82,7 +82,7 @@
 
 * mention the current versions of Piwik, AppsMall, mySQL, Chart.js, other libraries, etc. and explain how they are in current recoding to incorporate the newer updated versions of each.
 
-* mention about seeing separate documentation for staging environment
+* ~~mention about seeing separate documentation for staging environment~~
 
 * edit code to describe what is doing what
 
@@ -90,6 +90,15 @@
   * such as: open paraentheses in the piwik search keywords and what they mean. 
 
 
+
+
+
+
+## About AML Metrics and Goals
+
+The OZONE Platform activetly uses a metrics system to gather analytical data on how the project is being used. This analytical data is collected within the software called [Piwik](https://piwik.org/). Piwik is a free and open-source analytics platform that is flexible to meet the needs of the OZONE project while also maintaining the security of the users.
+
+While Piwik collects the data of the events produced in the AppsMall marketplace, the current process of sharing the collection is through manual creation and redistribution of spreadsheets. The goal of the [Piwik-Export](https://github.com/aml-development/piwik-export) site is to replace this manual process with a more dynamic resource that displays all of the data in one place and with no extra effort. The Piwik-Export site is coded to gather the Piwik data and display it in neat and organized formats for users outside of the OZONE project to see the data, allow csv export functionality, and create reactive charts made from the data.
 
 
 ### Chain of Dependencies
@@ -104,12 +113,6 @@ If there are any questions on or if the user still requires setting up the local
 
 
 
-### Starting Out Development
+## Starting Out Development
 
 
-
-### About AML Metrics and Goals
-
-The OZONE Platform activetly uses a metrics system to gather analytical data on how the project is being used. This analytical data is collected within the software called [Piwik](https://piwik.org/). Piwik is a free and open-source analytics platform that is flexible to meet the needs of the OZONE project while also maintaining the security of the users.
-
-While Piwik collects the data of the events produced in the AppsMall marketplace, the [Piwik-Export](https://github.com/aml-development/piwik-export) site gathers that data and displays it in readable formats for users to see the data, allow csv export functionality, and reactive charts to pair with the data. The goal of the Piwik-Export (called Piwik-Charts on staging) website is to display all analytical data from Piwik along ~~with manipulated data from the AppsMall backend~~ so that users outside the OZONE project can see the results of the collection in a neat and organized format.
