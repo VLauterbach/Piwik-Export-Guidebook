@@ -116,3 +116,11 @@ If there are any questions on or if the user still requires setting up the local
 ## Starting Out Development
 
 
+## Navigating Piwik
+
+Here explain the relation of Piwik and Piwik-Export. How does the Piwik-Export connect to Piwik and draw the information from it? Introduce the folder for the APIs in this section. Show the folder and how to find the correct API. To show the API, show the two ways to find the correct one: look in the modal in Piwik of the information that you want to transfer over and look at the end of the modal where the information lays (insert picture of the name of the modal and the bottom of the modal with arrow pointing to the location). After that selection, show the "widgets and dashboard" dropdown and explain how to look through that to find at first the "category" and then find the API. Show how to navigate that within the Atom folders. Once finding them, explain how this information is put into the Piwik-Stats.js form. Explain how the form is using "PiwikClient" as a means of extracting data directly from Piwik. Discuss more of the full chain process of Piwik to Piwik-Stats to stats.ejs within another section. 
+
+## Putting it all together
+
+Further explain the chain of process of Piwik to Piwik-Stats to stats.ejs here and how it all ties together.
+
