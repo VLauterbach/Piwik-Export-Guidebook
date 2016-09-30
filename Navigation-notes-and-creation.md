@@ -22,44 +22,22 @@
 
 
 
+## Notes
+
+* connection to developer setup
+  * add in "chmod" and "chown" for one of the steps
+
+* further update on each of necessary repos
+  * explain in doc how each contribute to environments
+
+
+
 
 
 
 ## Piwik Walkthrough
 
-* connection to developer setup
-  * add in "chmod" and "chown" for one of the steps
-
-* pictures of developing setup
-  * pictures of development & latest piwik
-  * link to piwik docs and helpful websites
-
-* looking at plugins presen
-  * all about plugins and the dashboard
-
-* explain the need for mock environment
-  * explain piwik-charts/export
-  * explain charts.js library
-    * link to thier docs and how to use sample codes
-
-* how to go about certain coded tasks
-  * such as import some piwik table
-  * where the charts are made (chartData)
-    * actually, just explain each file and file purpose
-
-* further update on each of necessary repos
-  * explain in doc how each contribute to environments
-
-* mentions common flaws
-  * things being currently updated
-
-* mention the current versions of Piwik, AppsMall, mySQL, Chart.js, other libraries, etc. and explain how they are in current recoding to incorporate the newer updated versions of each.
-
-* edit code to describe what is doing what
-
-
-
-
+Here, go through an entire mini-walkthrough of important things to know about Piwik. Refer to the section "Navigating Piwik" throughout. Explain things that a new person would need to know about the piwik interface that is not present through the piwik demo. What does it do? Why do we use it? Explain certain concepts such as open parentheses. 
 
 
 ## About AML Metrics and Goals
@@ -111,7 +89,7 @@ Here explain the relation of Piwik and Piwik-Export. How does the Piwik-Export c
 
 ## Putting it all together
 
-Further explain the chain of process of Piwik to Piwik-Stats to stats.ejs here and how it all ties together.
+Further explain the chain of process of Piwik to Piwik-Stats to stats.ejs here and how it all ties together. 
 
 ### Adding plugins
 
@@ -129,4 +107,22 @@ Here explain everything about Piwik-Stats. What does it do? What is it's purpose
 ### Sections of Code You May Need to Know
 
 In here, go over the Piwik-Stats form that must be filled out to import a section of data from Piwik over to the Piwik-Export. Also discuss about the config.json and to fill out the appropriate information if one has not done so. Talk about the groups.json and what it's purpose is, along with changing the url if need be (if url has changed). 
+
+
+
+## Charts.js
+
+The Piwik-Export is currently using Charts.js in order to construct the charts from the data tables. Charts.js is a very reactive chart library that offers many features for the project to use. [Chart.js library docs](http://www.chartjs.org/docs/)
+
+
+## Files Commonly Worked On
+
+The most common files that are worked on in the Piwik-Export repo are chartData.js, Piwik-Stats.js, stats.ejs, statsForm.ejs, and groups.json. You may occaisionally need to work in the app.js file if any requiremetns for the node server itself needs to be changed (such as changing the style of SSL). Explain what each file purposely does along with scenarios of what to do to the project, what file to go to. Also mention about the package.json and reminding to update the package everytime a new library is introduced. 
+
+
+## Languages used on project
+
+Explain what languages are being used on the project such as: javascript, jquery, PHP, node.js, express javascript, along with express node. Link to website and documentation on the languages and way to learn them if not known already. Explain in order what languages are most used and what are helpful to know while working in the Piwik-Export project time (mostly PHP was helpful but was not technically necessary).
+
+
 
