@@ -34,13 +34,8 @@
   * pictures of development & latest piwik
   * link to piwik docs and helpful websites
 
-* steps to add plugins
-
 * looking at plugins presen
-  * how to identify existing plugins
   * all about plugins and the dashboard
-  * plugins and their API folders:
-    * how to navigate the APi folders and find correct codesheets/files
 
 * explain the need for mock environment
   * explain piwik-charts/export
@@ -54,9 +49,6 @@
 
 * further update on each of necessary repos
   * explain in doc how each contribute to environments
-  * explain AML backend for piwik
-  * explain use of demoAuth in piwik
-  * explain the certs for the piwik usage
 
 * mentions common flaws
   * things being currently updated
@@ -88,6 +80,27 @@ During the creation fo the Piwik software, there should be a prompt to create a 
 If there are any questions on or if the user still requires setting up the local metrics environment, please see [Developer Metrics Setup](https://github.com/aml-development/ozp-documentation/wiki/Developer_Metrics_Setup) page in the ozp-documentation wiki.
 
 
+### AML Backend Proponents
+
+While not directly working with the backend to AppMalls or the ansible, it is still helpful to know the basics of what is going on. One of the main things to understand is the [Demo-Auth-Service repo](https://github.com/aml-development/demo-auth-service). The demo-auth-service allows the AML and Piwik software to read and verify the ciertificates that are given. Without the demo-auth-service running, both AppsMall and the Piwik may crash or simply not allow you through depending on your browser. The demo-auth-service can be started up and runs similar to a forever node server, with it entirely in the background, and whenever it runs into an error, it continues to run. To learn more about the demo-auth-service, refer the the documentation linked above.
+
+Another proponent to be aware about with the Piwik-Export is the Django REST backend for the AppsMall. In order to access the AML backend, take the url that is being used for the ansible (if you set it up locally such as the documentation suggests, the url should be ```https://localhost:4440/```) and add ```docs/#!/api``` onto the end of the url. This will lead you to a site similar to the one shown below:
+
+ * include picture of Swagger UI screenshot
+
+This backend allows you to see all of the collected data for what is stored in the AppsMall database. This keeps the full storage of applications, organizations, and admins that are in AppsMall as of currently. Unlike Piwik, this does not store historical data. What is shown is what is currently present in AppsMall at that moment. To store historical data (such as "how many apps were there in the month of October 2015?"), another program will have to be used to gather that data. 
+
+When clicking on any of the sections, you will be directed to a Django REST site that will look like the below:
+
+ * insert picture of Django REST site 
+
+Here, you can call to this information to pull into the Piwik-Export.
+
+
+## Certs and Metrics
+
+Setting up the SSL configuration and certificate authentication for the AML ansible is crucial as Piwik specifically gather the cert information when a user enters into the project. The cert information, including the organization the person comes from, thier username, their location, IP address and more are futher recorded into the Piwik software (as long as the proper plugins are installed). 
+
 
 ## Starting Out Development
 
@@ -100,9 +113,14 @@ Here explain the relation of Piwik and Piwik-Export. How does the Piwik-Export c
 
 Further explain the chain of process of Piwik to Piwik-Stats to stats.ejs here and how it all ties together.
 
-## Adding plugins
+### Adding plugins
 
-In here, discuss how to find the plugin page. ~~Discuss how certain plugins can be APIs themselves (such as ClientCertificates) and how those can be used to collect and call information to the Piwik-Stats~~ How plugins are the APIs that are used to clal upon information pulled from Piwik and into the Export. Discuss about how to add them if the previous plugins repos did not discuss them enough. Also link to all the piwik plugins that we have available on our AppsMall project and state how instructions on installation on located there. Further eleborate if needed. Discuss how there may be a time where a plugin must be made. Link to the Piwik developer documentation where they teach how to make the plugins. Explain what information can be made into plugins (events that Piwik collects) and what cannot be tracked through Piwik (static information such as backend applications). Use appGrowth chart as an example to how a plugin could not be made to fit the information that it needs, but rather a request server call to get the information from the backend. Explain 
+In here, discuss how to find the plugin page. ~~Discuss how certain plugins can be APIs themselves (such as ClientCertificates) and how those can be used to collect and call information to the Piwik-Stats~~ How plugins are the APIs that are used to clal upon information pulled from Piwik and into the Export. Discuss about how to add them if the previous plugins repos did not discuss them enough. Also link to all the piwik plugins that we have available on our AppsMall project and state how instructions on installation on located there. Further eleborate if needed. Discuss how there may be a time where a plugin must be made. Link to the Piwik developer documentation where they teach how to make the plugins. Explain what information can be made into plugins (events that Piwik collects) and what cannot be tracked through Piwik (static information such as backend applications). Use appGrowth chart as an example to how a plugin could not be made to fit the information that it needs, but rather a request server call to get the information from the backend. Explain how to check to see if a plugin is installed through Piwik, how to deactivate it, and how to see if it is properly showing.
+
+
+
+
+
 
 ## All about Piwik-Stats.js
 
