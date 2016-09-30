@@ -35,31 +35,12 @@
   * link to piwik docs and helpful websites
 
 * steps to add plugins
-  * ~~warnings for upgrading piwik and possible errors~~
-  * ~~steps on how to downgrade piwik~~
 
 * looking at plugins presen
-  * how to add new plugins
-  * how to make new plugins
-    * links to documentation on how to create new plugins from terminal
   * how to identify existing plugins
   * all about plugins and the dashboard
   * plugins and their API folders:
     * how to navigate the APi folders and find correct codesheets/files
-  * when to use plugins and when to hit the backend
-    * piwik tracks events where as backend stores database data (dynamic vs static)
-
-* ~~Map of how Piwik, mySQL, AML, and Piwik-Export are linked/chained together:~~
-  * ~~Chain of dependencies~~
-
-* Piwik-Stats.js, the in's ad out's
-  * What is it for? diff between piwik-stats and app.js
-  * API codes adn piwik-stats
-  * piwik-stats to stats.ejs
-  * piwik-stats connected to piwik
-    * explain what is piwik
-    * explain how the piwik-stats is pulling from piwik and how they are connected.
-  * What can be done in piwik-stats
 
 * explain the need for mock environment
   * explain piwik-charts/export
@@ -82,12 +63,7 @@
 
 * mention the current versions of Piwik, AppsMall, mySQL, Chart.js, other libraries, etc. and explain how they are in current recoding to incorporate the newer updated versions of each.
 
-* ~~mention about seeing separate documentation for staging environment~~
-
 * edit code to describe what is doing what
-
-* explain the certian areas in piwik that others may not completely understand
-  * such as: open paraentheses in the piwik search keywords and what they mean. 
 
 
 
@@ -118,9 +94,21 @@ If there are any questions on or if the user still requires setting up the local
 
 ## Navigating Piwik
 
-Here explain the relation of Piwik and Piwik-Export. How does the Piwik-Export connect to Piwik and draw the information from it? Introduce the folder for the APIs in this section. Show the folder and how to find the correct API. To show the API, show the two ways to find the correct one: look in the modal in Piwik of the information that you want to transfer over and look at the end of the modal where the information lays (insert picture of the name of the modal and the bottom of the modal with arrow pointing to the location). After that selection, show the "widgets and dashboard" dropdown and explain how to look through that to find at first the "category" and then find the API. Show how to navigate that within the Atom folders. Once finding them, explain how this information is put into the Piwik-Stats.js form. Explain how the form is using "PiwikClient" as a means of extracting data directly from Piwik. Discuss more of the full chain process of Piwik to Piwik-Stats to stats.ejs within another section. 
+Here explain the relation of Piwik and Piwik-Export. How does the Piwik-Export connect to Piwik and draw the information from it? Introduce the folder for the APIs in this section. Show the folder and how to find the correct API. To show the API, show the two ways to find the correct one: look in the modal in Piwik of the information that you want to transfer over and look at the end of the modal where the information lays (insert picture of the name of the modal and the bottom of the modal with arrow pointing to the location). After that selection, show the "widgets and dashboard" dropdown and explain how to look through that to find at first the "category" and then find the API. Show how to navigate that within the Atom folders. Once finding them, explain how this information is put into the Piwik-Stats.js form. Explain how the form is using "PiwikClient" as a means of extracting data directly from Piwik. Discuss more of the full chain process of Piwik to Piwik-Stats to stats.ejs within another section. Talk about instances of Piwik others may not know about, such as searchwords with open parentheses. 
 
 ## Putting it all together
 
 Further explain the chain of process of Piwik to Piwik-Stats to stats.ejs here and how it all ties together.
+
+## Adding plugins
+
+In here, discuss how to find the plugin page. ~~Discuss how certain plugins can be APIs themselves (such as ClientCertificates) and how those can be used to collect and call information to the Piwik-Stats~~ How plugins are the APIs that are used to clal upon information pulled from Piwik and into the Export. Discuss about how to add them if the previous plugins repos did not discuss them enough. Also link to all the piwik plugins that we have available on our AppsMall project and state how instructions on installation on located there. Further eleborate if needed. Discuss how there may be a time where a plugin must be made. Link to the Piwik developer documentation where they teach how to make the plugins. Explain what information can be made into plugins (events that Piwik collects) and what cannot be tracked through Piwik (static information such as backend applications). Use appGrowth chart as an example to how a plugin could not be made to fit the information that it needs, but rather a request server call to get the information from the backend. Explain 
+
+## All about Piwik-Stats.js
+
+Here explain everything about Piwik-Stats. What does it do? What is it's purpose? Talk about how the purpose of Piwik-Stats is to tell Piwik what it wants from it and what it wants to show in stats.ejs. Explain further about the connection to Piwik and how it draws info from Piwik. Talk about the ```var period = 'range'``` and what this purpose is. Explain how the date-range-picker in the statsForm.ejs is what gives the range, the app.js sends that call to Piwik, Piwik sees from the Piwik-Stats what date object to look for, Piwik takes the range and find the data for said range, and then hands that data over to Piwik-Export to put into tables and charts. Discuss about PiwikClient and how that is pulling the data that is needed to the sever from Piwik itself. Explain how Piwik-Stats is connected to stats.ejs and how the information it gets is sent to stats.ejs and stylized. Explain how Piwik-Stats is the messenger that fetches the info and stats.ejs is the guy that works with the information. Explain what you need to do to get the info up. Discuss what else can be done in Piwik-Stats to further progress the Export project.
+
+### Sections of Code You May Need to Know
+
+In here, go over the Piwik-Stats form that must be filled out to import a section of data from Piwik over to the Piwik-Export. Also discuss about the config.json and to fill out the appropriate information if one has not done so. Talk about the groups.json and what it's purpose is, along with changing the url if need be (if url has changed). 
 
